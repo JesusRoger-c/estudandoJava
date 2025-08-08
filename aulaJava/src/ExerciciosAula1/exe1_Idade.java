@@ -3,9 +3,6 @@ import java.time.OffsetDateTime;
 import java.util.Scanner;
 
 
-
-
-
 public class exe1_Idade {
 	
 	public static String name;
