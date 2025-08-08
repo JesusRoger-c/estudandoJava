@@ -12,7 +12,7 @@ public class calculoSeguro {
 	private static double premio;
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 		scanner = new Scanner(System.in);
 		
