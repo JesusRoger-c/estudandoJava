@@ -9,6 +9,7 @@ public class ContaTerminal {
 	private static double saldo = 2.869;
 	private static Scanner scanner;
 	
+	
 
 	public static void main(String[] args) {
 		scanner = new Scanner(System.in);
