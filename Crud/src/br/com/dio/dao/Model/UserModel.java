@@ -1,6 +1,6 @@
 package br.com.dio.dao.Model;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class UserModel{
@@ -8,13 +8,13 @@ public class UserModel{
 	private long id; 
 	private String name; 
 	private String email; 
-	private OffsetDateTime birthday;
+	private LocalDate birthday;
 	
 	
 	
 	//Construtores
 	
-	public UserModel(long id, String name, String email, OffsetDateTime birthday) {
+	public UserModel(long id, String name, String email, final LocalDate birthday) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -51,10 +51,10 @@ public class UserModel{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public OffsetDateTime getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(OffsetDateTime birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
 	

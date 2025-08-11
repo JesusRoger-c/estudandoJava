@@ -1,6 +1,6 @@
 package br.com.dio.dao;
 import java.util.ArrayList;
-
+import br.com.dio.dao.Exception.EmptyStorageException;
 import br.com.dio.dao.Exception.UserNotFoundException;
 import br.com.dio.dao.Model.UserModel;
 
@@ -35,7 +35,7 @@ public class UserDAO {
 	
 	//Metodo de excessão caso ID não esteja cadastrado 
 	public UserModel findById(final long id) {
-		
+		verifica();
 		var message = String.format("Não existe usuário com o id %s cadastrado", id);
 		return models.stream().filter(u -> u.getId() == id)
 		.findFirst()
@@ -54,7 +54,24 @@ public class UserDAO {
 	
 	//Retorna Tudo 
 	public ArrayList<UserModel> findAll(){
-		return models;
+		ArrayList<UserModel> result;
+		try {
+			verifica();
+			result = models;
+			
+		}catch (EmptyStorageException ex) {
+			ex.printStackTrace();
+			result = new ArrayList<UserModel>();		
+			
+		}
+			return result;	
+		
+	}
+	
+	
+	
+	private void verifica() {
+		if(models.isEmpty()) throw new EmptyStorageException("O armazenamento está vazio :(");
 	}
 
 }
